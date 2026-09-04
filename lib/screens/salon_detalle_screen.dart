@@ -8,11 +8,8 @@ import '../widgets/island_nav_bar.dart';
 import '../widgets/nuevo_equipo_form.dart';
 import '../widgets/resumen_bar.dart';
 import 'detalle_equipo_screen.dart';
+import 'estadisticas_screen.dart';
 
-/// Segundo nivel de la jerarquía de vistas: todos los computadores de
-/// UN salón. Reutiliza el mismo patrón de grid con semáforo visual y la
-/// MISMA isla de navegación inferior que la vista de Salones, para que
-/// la navegación se sienta consistente en toda la app.
 class SalonDetalleScreen extends StatefulWidget {
   final Salon salon;
 
@@ -116,8 +113,6 @@ class _SalonDetalleScreenState extends State<SalonDetalleScreen> {
                   ),
                 ],
               ),
-
-              // Misma isla de navegación que la vista de Salones.
               Positioned(
                 left: 0,
                 right: 0,
@@ -129,6 +124,13 @@ class _SalonDetalleScreenState extends State<SalonDetalleScreen> {
                         icon: Icons.home_rounded,
                         label: 'Salones',
                         onTap: () => Navigator.of(context).popUntil((r) => r.isFirst),
+                      ),
+                      IslandNavItem(
+                        icon: Icons.insights_rounded,
+                        label: 'Estadísticas',
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(builder: (_) => const EstadisticasScreen()),
+                        ),
                       ),
                       IslandNavItem(
                         icon: Icons.add_rounded,

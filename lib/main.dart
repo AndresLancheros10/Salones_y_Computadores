@@ -5,8 +5,8 @@ import 'theme/app_theme.dart';
 
 /// ⚠️ IMPORTANTE: reemplaza estos valores por los de TU proyecto Supabase.
 /// Los encuentras en: Project Settings -> API, en tu panel de Supabase.
-const String kSupabaseUrl = 'https://TU-PROYECTO.supabase.co';
-const String kSupabaseAnonKey = 'TU-ANON-KEY-AQUI';
+const String kSupabaseUrl = 'https://cacczcomjpferoeyhlsn.supabase.co';
+const String kSupabaseAnonKey = 'sb_publishable_bmE6vSd41WDEmBljFpu7TQ_mkPuv2aU';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

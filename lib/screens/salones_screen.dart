@@ -6,13 +6,9 @@ import '../theme/app_theme.dart';
 import '../widgets/island_nav_bar.dart';
 import '../widgets/nuevo_salon_form.dart';
 import '../widgets/salon_card.dart';
+import 'estadisticas_screen.dart';
 import 'salon_detalle_screen.dart';
 
-/// Pantalla RAÍZ de la app: lista de TODOS los salones registrados.
-///
-/// Desde aquí se desglosa la navegación hacia el detalle de cada salón
-/// y, dentro de éste, hacia el detalle de cada computador — la jerarquía
-/// de vistas pedida: Salones -> Equipos de un salón -> Detalle de equipo.
 class SalonesScreen extends StatefulWidget {
   const SalonesScreen({super.key});
 
@@ -116,8 +112,6 @@ class _SalonesScreenState extends State<SalonesScreen> {
               );
             },
           ),
-
-          // Isla de navegación flotante, siempre visible en la parte inferior.
           Positioned(
             left: 0,
             right: 0,
@@ -128,7 +122,14 @@ class _SalonesScreenState extends State<SalonesScreen> {
                   IslandNavItem(
                     icon: Icons.meeting_room_rounded,
                     label: 'Salones',
-                    onTap: () {}, // ya estamos en la vista raíz
+                    onTap: () {},
+                  ),
+                  IslandNavItem(
+                    icon: Icons.insights_rounded,
+                    label: 'Estadísticas',
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => const EstadisticasScreen()),
+                    ),
                   ),
                   IslandNavItem(
                     icon: Icons.add_rounded,
